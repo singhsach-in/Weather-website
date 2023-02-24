@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>Check Weather</li>
+        <li>
+          <input type="search" id="search" placeholder="enter city" value="" />
+          <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div id="city-name-div">
+        <h1>Search to find weather <span id="city-name"></span></h1>
+      </div>
+      <div class="cards-container">
+        <div class="card temp-card">
+          <h3>Temperature</h3>
+          <h1><span id="temp"></span><span id="celcius">&#8451;</span></h1>
+          <p>Maximum temperature is: <span id="max_temp"></span></p>
+          <p>Minimum temperature is: <span id="min_temp"></span></p>
+        </div>
+        <div class="humidity-card card">
+          <h3>Humidity</h3>
+          <h1>
+            <span id="humidity"></span><span id="percentage">&#x25;</span>
+          </h1>
+          <p>Feels like: <span id="feels_like"></span></p>
+          <p>Sunrise is: <span id="sunrise"></span></p>
+          <p>Sunset is: <span id="sunset"></span></p>
+        </div>
+        <div class="wind-card card">
+          <h3>Wind</h3>
+          <h1><span id="wind_speed"></span><span id="speed">km/hr</span></h1>
+          <p>Wind degree is: <span id="wind_degrees"></span></p>
+          <p>Cloud PCT is: <span id="cloud_pct"></span></p>
+        </div>
+      </div>
+      <div class="table-container">
+        <h3>Weather at popular cities</h3>
+        <table>
+          <tr>
+            <th>city</th>
+            <th>temp</th>
+            <th>min temp</th>
+            <th>max temp</th>
+            <th>humidity</th>
+            <th>wind speed</th>
+            <th>feels like</th>
+            <th>sunrise</th>
+            <th>sunset</th>
+            <th>wind degrees</th>
+            <!-- <th>wind speed</th> -->
+          </tr>
+          <tr class="city">
+            <td>Delhi</td>
+            <td id="Delhi-temp">0</td>
+            <td id="Delhi-min_temp">0</td>
+            <td id="Delhi-max_temp">0</td>
+            <td id="Delhi-humidity">0</td>
+            <td id="Delhi-wind_speed">0</td>
+            <td id="Delhi-feels_like">0</td>
+            <td id="Delhi-sunrise">0</td>
+            <td id="Delhi-sunset">0</td>
+            <td id="Delhi-wind_degrees">0</td>
+            <!-- <td id="fixed-city-delhi-speed">10</td> -->
+          </tr>
+          <tr class="city">
+            <td>Kolkata</td>
+
+            <td id="Kolkata-temp">0</td>
+            <td id="Kolkata-min_temp">0</td>
+            <td id="Kolkata-max_temp">0</td>
+            <td id="Kolkata-humidity">0</td>
+            <td id="Kolkata-wind_speed">0</td>
+            <td id="Kolkata-feels_like">0</td>
+            <td id="Kolkata-sunrise">0</td>
+            <td id="Kolkata-sunset">0</td>
+            <td id="Kolkata-wind_degrees">0</td>
+            <!-- <td>10</td> -->
+          </tr>
+          <!-- <tr class="city">
+                    <td >New York</td>
+                    <td id="NewYork-temp">1</td>
+                    <td id="NewYork-min_temp">2</td>
+                    <td id="NewYork-max_temp">3</td>
+                    <td id="NewYork-humidity">4</td>
+                    <td id="NewYork-wind_speed">5</td>
+                    <td id="NewYork-feels_like">6</td>
+                    <td id="NewYork-sunrise">7</td>
+                    <td id="NewYork-sunset">8</td>
+                    <td id="NewYork-wind_degrees">9</td>
+                    <!-- <td>10</td>
+                </tr> 
+            -->
+          <tr class="city">
+            <td>london</td>
+            <td id="london-temp">0</td>
+            <td id="london-min_temp">0</td>
+            <td id="london-max_temp">0</td>
+            <td id="london-humidity">0</td>
+            <td id="london-wind_speed">0</td>
+            <td id="london-feels_like">0</td>
+            <td id="london-sunrise">0</td>
+            <td id="london-sunset">0</td>
+            <td id="london-wind_degrees">0</td>
+            <!-- <td>10</td> -->
+          </tr>
+          <tr class="city">
+            <td>paris</td>
+            <td id="paris-temp">0</td>
+            <td id="paris-min_temp">0</td>
+            <td id="paris-max_temp">0</td>
+            <td id="paris-humidity">0</td>
+            <td id="paris-wind_speed">0</td>
+            <td id="paris-feels_like">0</td>
+            <td id="paris-sunrise">0</td>
+            <td id="paris-sunset">0</td>
+            <td id="paris-wind_degrees">0</td>
+            <!-- <td>10</td> -->
+          </tr>
+          <tr class="city">
+            <td>mexico</td>
+            <td id="mexico-temp">0</td>
+            <td id="mexico-min_temp">0</td>
+            <td id="mexico-max_temp">0</td>
+            <td id="mexico-humidity">0</td>
+            <td id="mexico-wind_speed">0</td>
+            <td id="mexico-feels_like">0</td>
+            <td id="mexico-sunrise">0</td>
+            <td id="mexico-sunset">0</td>
+            <td id="mexico-wind_degrees">0</td>
+            <!-- <td>10</td> -->
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
